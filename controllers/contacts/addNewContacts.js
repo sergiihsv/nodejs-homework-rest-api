@@ -1,12 +1,6 @@
 const contacts = require("../../models/contacts");
-const { RequestError } = require("../../helpers");
-const { addShema } = require("../../schemas/contacts");
 
-const addNewContacts = async (req, res, next) => {
-  const { error } = addShema.validate(req.body);
-  if (error) {
-    throw RequestError(400, error.message);
-  }
+const addNewContacts = async (req, res) => {
   const result = await contacts.addContact(req.body);
   res.status(201).json(result);
 };
