@@ -1,4 +1,4 @@
-const fs = require("fs").promises;
+/* const fs = require("fs").promises;
 const path = require("path");
 const { nanoid } = require("nanoid");
 
@@ -57,3 +57,4 @@ module.exports = {
   updateContact,
   removeContact,
 };
+ */
