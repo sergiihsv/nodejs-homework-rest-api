@@ -6,9 +6,9 @@ const { validateBody } = require("../../middlewares");
 const { schemas } = require("../../models/contact");
 const router = express.Router();
 
-/* router.get("/", ctlrWrapper(ctrl.getAllListContacts));
+router.get("/", ctlrWrapper(ctrl.getAllListContacts));
 
-router.get("/:id", ctlrWrapper(ctrl.getById)); */
+router.get("/:id", ctlrWrapper(ctrl.getById));
 
 router.post(
   "/",
@@ -16,12 +16,18 @@ router.post(
   ctlrWrapper(ctrl.addNewContacts)
 );
 
-/* router.put(
+router.put(
   "/:id",
   validateBody(schemas.addShema),
   ctlrWrapper(ctrl.updateById)
 );
 
-router.delete("/:id", ctlrWrapper(ctrl.deleteById)); */
+router.patch(
+  "/:id/favorite",
+  validateBody(schemas.updateFavoriteSchema),
+  ctlrWrapper(ctrl.updateStatusContact)
+);
+
+router.delete("/:id", ctlrWrapper(ctrl.deleteById));
 
 module.exports = router;
