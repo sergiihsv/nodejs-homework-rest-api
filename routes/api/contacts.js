@@ -18,7 +18,7 @@ router.post(
 
 router.put(
   "/:id",
-  validateBody(schemas.addShema),
+  validateBody(schemas.addSchema),
   ctlrWrapper(ctrl.updateById)
 );
 
