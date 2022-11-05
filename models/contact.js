@@ -23,6 +23,8 @@ const contactSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
+contactSchema.post("save", handleSaveErrors);
+
 const addSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().required(),
@@ -38,8 +40,6 @@ const schemas = {
   addSchema,
   updateFavoriteSchema,
 };
-
-contactSchema.post("save", handleSaveErrors);
 
 const Contact = model("contact", contactSchema);
 
