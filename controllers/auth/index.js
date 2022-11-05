@@ -1,5 +1,5 @@
-const singup = require("./signup");
+const signup = require("./signup");
 
 module.exports = {
-  singup,
+  signup,
 };

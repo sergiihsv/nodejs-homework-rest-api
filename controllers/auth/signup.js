@@ -1,7 +1,7 @@
 const { User } = require("../../models/user");
 const { RequestError } = require("../../helpers");
 
-const singup = async (req, res) => {
+const signup = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
   if (user) {
@@ -16,6 +16,4 @@ const singup = async (req, res) => {
   });
 };
 
-module.export = {
-  singup,
-};
+module.exports = signup;
