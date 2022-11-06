@@ -1,7 +1,7 @@
 const express = require("express");
 const ctrl = require("../../controllers/contacts");
 const { ctlrWrapper } = require("../../helpers");
-const { validateBody } = require("../../middlewares");
+const { validateBody, authenticate } = require("../../middlewares");
 const { schemas } = require("../../models/contact");
 
 const router = express.Router();
@@ -12,6 +12,7 @@ router.get("/:id", ctlrWrapper(ctrl.getById));
 
 router.post(
   "/",
+  authenticate,
   validateBody(schemas.addSchema),
   ctlrWrapper(ctrl.addNewContacts)
 );
