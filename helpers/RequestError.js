@@ -1,6 +1,7 @@
 const messages = {
   400: "Missing required name field",
   404: "Not found",
+  401: "Unauthorized",
 };
 
 const RequestError = (status, message = messages[status]) => {
