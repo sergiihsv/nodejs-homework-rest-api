@@ -12,7 +12,7 @@ router.post(
   ctlrWrapper(ctrl.signup)
 );
 
-router.get("/signup", ctlrWrapper(ctrl.signup));
+router.get("/auth/verify/:verificationToken", ctlrWrapper(ctrl.verify));
 
 router.post(
   "/login",

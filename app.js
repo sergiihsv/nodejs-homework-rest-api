@@ -4,9 +4,9 @@ const cors = require("cors");
 require("dotenv").config();
 const contactsRouter = require("./routes/api/contacts");
 const authRouter = require("./routes/api/auth");
-const nodemailer = require("nodemailer");
+/* const nodemailer = require("nodemailer"); */
 
-const { META_PASSWORD } = process.env;
+/* const { META_PASSWORD } = process.env;
 const nodemailerConfig = {
   host: "smtp.meta.ua",
   port: 465,
@@ -28,7 +28,7 @@ const mail = {
 transport
   .sendMail(mail)
   .then(() => console.log("Email send success"))
-  .catch((error) => console.log(error.message));
+  .catch((error) => console.log(error.message)); */
 
 const app = express();
 
