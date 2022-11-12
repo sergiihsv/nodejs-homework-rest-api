@@ -12,6 +12,8 @@ router.post(
   ctlrWrapper(ctrl.signup)
 );
 
+router.get("/signup", ctlrWrapper(ctrl.signup));
+
 router.post(
   "/login",
   validateBody(schemas.loginSchema),
